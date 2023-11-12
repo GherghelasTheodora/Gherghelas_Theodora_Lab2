@@ -23,6 +23,9 @@ namespace Gherghelas_Theodora_Lab2.Models
         public int? PublisherID { get; set; } //cheie straina
         public Publisher? Publisher { get; set; } //propr navigare
 
+        public int? BorrowingID { get; set; }
+        public Borrowing? Borrowing { get; set; }
+
         public ICollection<BookCategory>? BookCategories { get; set; }
         
         
