@@ -8,12 +8,15 @@ namespace Gherghelas_Theodora_Lab2.Models
     {
         public int ID { get; set; }
         [Display(Name = "Book Title")]
+        [Required(ErrorMessage = "Camp obligatoriu" )]
+        [StringLength(150, MinimumLength = 3)]
         public string Title { get; set; }
 
         public int? AuthorID { get; set; } //cheie straina
         public Author? Author { get; set; } //proprietate navigare
 
         [Column(TypeName = "decimal(6, 2)")]
+        [Range(0.01, 500)]
         public decimal Price { get; set; }
 
         [DataType(DataType.Date)]
@@ -26,6 +29,7 @@ namespace Gherghelas_Theodora_Lab2.Models
         public int? BorrowingID { get; set; }
         public Borrowing? Borrowing { get; set; }
 
+       
         public ICollection<BookCategory>? BookCategories { get; set; }
         
         
